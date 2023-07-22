@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "325902526004",
+    "project_id": "fir-refugees-app",
+    "storage_bucket": "fir-refugees-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325902526004:android:7ffb94432a592c08b68c61",
+        "android_client_info": {
+          "package_name": "com.example.firebase_refugees_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "325902526004-n8ct4rnu30mn22i0vlvbpe536ihca467.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCY4M8kyfcycZF6DH9d6O7dn04SovY0eJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "325902526004-n8ct4rnu30mn22i0vlvbpe536ihca467.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
