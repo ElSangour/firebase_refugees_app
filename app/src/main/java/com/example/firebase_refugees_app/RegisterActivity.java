@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-//        getSupportActionBar().setTitle("Inscription");
+        getSupportActionBar().setTitle("Inscription");
         Toast.makeText(RegisterActivity.this,"You can register Now",Toast.LENGTH_LONG).show();
         progressBar = findViewById(R.id.progressBar);
         editTextRegisterFullName = findViewById(R.id.editText_register_full_name);
@@ -129,7 +129,7 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this,"Please Enter your password", Toast.LENGTH_LONG);
                     editTextRegisterPwd.setError("Password is Required");
                     editTextRegisterPwd.requestFocus();
-                } else if (textPwd.length() < 8 || !mobileMatcher.find()) {
+                } else if (textPwd.length() < 8 ) {
                     Toast.makeText(RegisterActivity.this,"Please re-Enter your password", Toast.LENGTH_LONG);
                     editTextRegisterPwd.setError("Password must be at least 8 characters");
                     editTextRegisterPwd.requestFocus();
