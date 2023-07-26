@@ -52,7 +52,7 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        getSupportActionBar().setTitle("Inscription");
+        getSupportActionBar().setTitle("Register");
         Toast.makeText(RegisterActivity.this,"You can register Now",Toast.LENGTH_LONG).show();
         progressBar = findViewById(R.id.progressBar);
         editTextRegisterFullName = findViewById(R.id.editText_register_full_name);
@@ -169,10 +169,10 @@ public class RegisterActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         firebaseUser.sendEmailVerification();
                                         Toast.makeText(RegisterActivity.this,"User Registered successfully,Please Verify your email",Toast.LENGTH_LONG).show();
-//                                        Intent intent = new Intent(RegisterActivity.this,UserProfileActivity.class);
-//                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                                        startActivity(intent);
-//                                        finish();
+                                        Intent intent = new Intent(RegisterActivity.this,UserProfileActivity.class);
+                                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                        startActivity(intent);
+                                        finish();
                                     } else {
                                         Toast.makeText(RegisterActivity.this,"User registration failed",Toast.LENGTH_LONG).show();
                                     }
@@ -200,5 +200,6 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 });
+
     }
 }
