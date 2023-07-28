@@ -68,9 +68,18 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="login"
+            android:text="Login"
             android:id="@+id/button_login"
             android:layout_below="@id/editText_login_password"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="70dp"
+            android:layout_marginLeft="70dp"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:id="@+id/button_forgot_password"
+            android:layout_below="@id/button_login"
             android:layout_marginTop="50dp"
             android:layout_marginRight="70dp"
             android:layout_marginLeft="70dp"/>
