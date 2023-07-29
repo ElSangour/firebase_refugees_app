@@ -1,10 +1,5 @@
 package com.example.firebase_refugees_app;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,14 +12,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseAuthInvalidUserException;
-import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText editTextLoginEmail;
@@ -39,8 +38,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().setTitle("Login");
         authProfile = FirebaseAuth.getInstance();
-        Button buttonForgotPassword = findViewById(R.id.button_forgot_password);
-        buttonForgotPassword.setOnClickListener(new View.OnClickListener() {
+        TextView textViewLinkResetPwd = findViewById(R.id.textView_forgot_password_link);
+        textViewLinkResetPwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(LoginActivity.this,"You can reset your password now!",Toast.LENGTH_SHORT).show();
@@ -48,8 +47,18 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        TextView textViewLinkRegister = findViewById(R.id.textView_register_link);
+        textViewLinkRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginActivity.this,"You can reset your password now!",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
         editTextLoginEmail = findViewById(R.id.editText_login_email);
-        editTextPwd =  findViewById(R.id.editText_login_password);
+        editTextPwd =  findViewById(R.id.editText_login_pwd);
         progressBar =  findViewById(R.id.progressBar);
         ImageView imageViewShowHidePwd = findViewById(R.id.imageView_show_hide_pwd);
         imageViewShowHidePwd.setImageResource(R.drawable.ic_hide_pwd);
@@ -96,6 +105,8 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
+                                    String userId = task.getResult().getUser().getUid();
+                                    AppCache.saveData(getApplicationContext(), "userId", userId);
                                     Toast.makeText(LoginActivity.this,"You are logged in now",Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(LoginActivity.this, UserProfileActivity.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -133,11 +133,7 @@ public class UploadProfilePicActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.menu_refresh){
-            startActivity(getIntent());
-            finish();
-            overridePendingTransition(0,0);
-        } else if (id == R.id.menu_update_profile){
+        if (id == R.id.menu_update_profile){
             Intent intent = new Intent(UploadProfilePicActivity.this,UpdateProfileActivity.class);
             startActivity(intent);
             finish();
@@ -145,17 +141,19 @@ public class UploadProfilePicActivity extends AppCompatActivity {
             Intent intent = new Intent(UploadProfilePicActivity.this,UpdateEmailActivity.class);
             startActivity(intent);
             finish();
-        } /*else if (id == R.id.menu_settings){
-            Toast.makeText(UserProfileActivity.this,"menu_settings",Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.menu_settings){
+            Toast.makeText(UploadProfilePicActivity.this,"menu_settings",Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.menu_change_password){
-            Intent intent = new Intent(UserProfileActivity.this,ChangePasswordActivity.class);
+            Intent intent = new Intent(UploadProfilePicActivity.this,ChangePasswordActivity.class);
             startActivity(intent);
+            finish();
         } else if (id == R.id.menu_delete_profile){
-            Intent intent = new Intent(UserProfileActivity.this,DeleteProfileActivity.class);
+            Intent intent = new Intent(UploadProfilePicActivity.this,DeleteProfileActivity.class);
             startActivity(intent);
-        }*/ else if (id == R.id.menu_logout){
+        } else if (id == R.id.menu_logout){
             authProfile.signOut();
+            AppCache.saveData(getApplicationContext(), "userId", "");
             Toast.makeText(UploadProfilePicActivity.this,"Logout",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(UploadProfilePicActivity.this,MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

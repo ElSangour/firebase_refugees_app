@@ -41,7 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText editTextRegisterDoB;
     private EditText editTextRegisterMobile;
     private EditText editTextRegisterPwd;
-    private EditText editTextRegisterConfirmPwd ;
     private ProgressBar progressBar;
     private RadioGroup radioGroupRegisterGender;
     private RadioButton radioButtonRegisterGenderSelected;
@@ -60,7 +59,6 @@ public class RegisterActivity extends AppCompatActivity {
         editTextRegisterDoB = findViewById(R.id.editText_register_dob);
         editTextRegisterMobile = findViewById(R.id.editText_register_mobile);
         editTextRegisterPwd =  findViewById(R.id.editText_register_password);
-        editTextRegisterConfirmPwd = findViewById(R.id.editText_register_confirm_password);
         radioGroupRegisterGender = findViewById(R.id.radio_group_register_gender);
         radioGroupRegisterGender.clearCheck();
 
@@ -92,7 +90,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String textDoB = editTextRegisterDoB.getText().toString();
                 String textMobile = editTextRegisterMobile.getText().toString();
                 String textPwd = editTextRegisterPwd.getText().toString();
-                String textConfirmPwd = editTextRegisterConfirmPwd.getText().toString();
                 String textGender;
                 String mobileRegex = "\"^(9|5|2)\\\\d{7}$\";";
                 Pattern mobilePattern = Pattern.compile(mobileRegex);
@@ -133,14 +130,6 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this,"Please re-Enter your password", Toast.LENGTH_LONG);
                     editTextRegisterPwd.setError("Password must be at least 8 characters");
                     editTextRegisterPwd.requestFocus();
-                } else if (TextUtils.isEmpty(textConfirmPwd)){
-                    Toast.makeText(RegisterActivity.this,"Please Enter your confirm password", Toast.LENGTH_LONG);
-                    editTextRegisterConfirmPwd.setError("Confirm Password is Required");
-                    editTextRegisterConfirmPwd.requestFocus();
-                } else if (!textPwd.equals(textConfirmPwd)){
-                    Toast.makeText(RegisterActivity.this,"Please re-Enter your confirm password", Toast.LENGTH_LONG);
-                    editTextRegisterConfirmPwd.setError("Confirm Password does not match");
-                    editTextRegisterConfirmPwd.requestFocus();
                 } else {
                     textGender = radioButtonRegisterGenderSelected.getText().toString();
                     progressBar.setVisibility(View.VISIBLE);

@@ -1,10 +1,5 @@
 package com.example.firebase_refugees_app;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -18,10 +13,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
-import com.google.firebase.auth.EmailAuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -153,11 +151,7 @@ public class UpdateEmailActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.menu_refresh){
-            startActivity(getIntent());
-            finish();
-            overridePendingTransition(0,0);
-        } else if (id == R.id.menu_update_profile){
+        if (id == R.id.menu_update_profile){
             Intent intent = new Intent(UpdateEmailActivity.this,UpdateProfileActivity.class);
             startActivity(intent);
             finish();
@@ -165,17 +159,20 @@ public class UpdateEmailActivity extends AppCompatActivity {
             Intent intent = new Intent(UpdateEmailActivity.this,UpdateEmailActivity.class);
             startActivity(intent);
             finish();
-        } /*else if (id == R.id.menu_settings){
-            Toast.makeText(UserProfileActivity.this,"menu_settings",Toast.LENGTH_SHORT).show();
+        } else if (id == R.id.menu_settings){
+            Toast.makeText(UpdateEmailActivity.this,"menu_settings",Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.menu_change_password){
-            Intent intent = new Intent(UserProfileActivity.this,ChangePasswordActivity.class);
+            Intent intent = new Intent(UpdateEmailActivity.this,ChangePasswordActivity.class);
             startActivity(intent);
+            finish();
         } else if (id == R.id.menu_delete_profile){
-            Intent intent = new Intent(UserProfileActivity.this,DeleteProfileActivity.class);
+            Intent intent = new Intent(UpdateEmailActivity.this,DeleteProfileActivity.class);
             startActivity(intent);
-        }*/ else if (id == R.id.menu_logout){
+            finish();
+        } else if (id == R.id.menu_logout){
             authProfile.signOut();
+            AppCache.saveData(getApplicationContext(), "userId", "");
             Toast.makeText(UpdateEmailActivity.this,"Logout",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(UpdateEmailActivity.this,MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);

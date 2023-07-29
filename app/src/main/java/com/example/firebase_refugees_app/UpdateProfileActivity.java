@@ -1,13 +1,9 @@
 package com.example.firebase_refugees_app;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +14,9 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -181,11 +180,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.menu_refresh){
-            startActivity(getIntent());
-            finish();
-            overridePendingTransition(0,0);
-        } else if (id == R.id.menu_update_profile){
+        if (id == R.id.menu_update_profile){
             Intent intent = new Intent(UpdateProfileActivity.this,UpdateProfileActivity.class);
             startActivity(intent);
             finish();
@@ -193,17 +188,19 @@ public class UpdateProfileActivity extends AppCompatActivity {
             Intent intent = new Intent(UpdateProfileActivity.this,UpdateEmailActivity.class);
             startActivity(intent);
             finish();
-        } /*else if (id == R.id.menu_settings){
-            Toast.makeText(UserProfileActivity.this,"menu_settings",Toast.LENGTH_SHORT).show();
-        }
-        else if (id == R.id.menu_change_password){
-            Intent intent = new Intent(UserProfileActivity.this,ChangePasswordActivity.class);
+        } else if (id == R.id.menu_change_password){
+            Intent intent = new Intent(UpdateProfileActivity.this,ChangePasswordActivity.class);
             startActivity(intent);
+            finish();
+        } else if (id == R.id.menu_settings){
+            Toast.makeText(UpdateProfileActivity.this,"menu_settings",Toast.LENGTH_SHORT).show();
         } else if (id == R.id.menu_delete_profile){
-            Intent intent = new Intent(UserProfileActivity.this,DeleteProfileActivity.class);
+            Intent intent = new Intent(UpdateProfileActivity.this,DeleteProfileActivity.class);
             startActivity(intent);
-        }*/ else if (id == R.id.menu_logout){
+            finish();
+        } else if (id == R.id.menu_logout){
             authProfile.signOut();
+            AppCache.saveData(getApplicationContext(), "userId", "");
             Toast.makeText(UpdateProfileActivity.this,"Logout",Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(UpdateProfileActivity.this,MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
