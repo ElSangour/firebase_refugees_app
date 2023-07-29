@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         String userID = AppCache.getData(getApplicationContext(),"userId","");
         if (!userID.matches("")){
-            Intent intent = new Intent(MainActivity.this, UserProfileActivity.class);
+            Intent intent = new Intent(MainActivity.this, HomeActivity.class);
             startActivity(intent);
             finish();
         }

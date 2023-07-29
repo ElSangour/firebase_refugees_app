@@ -80,7 +80,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String textEmail = editTextLoginEmail.getText().toString();
                 String textPwd = editTextPwd.getText().toString();
-
                 if (TextUtils.isEmpty(textEmail)) {
                     Toast.makeText(LoginActivity.this, "Please enter your email", Toast.LENGTH_SHORT).show();
                     editTextLoginEmail.setError("Email is required");
@@ -108,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                                     String userId = task.getResult().getUser().getUid();
                                     AppCache.saveData(getApplicationContext(), "userId", userId);
                                     Toast.makeText(LoginActivity.this,"You are logged in now",Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(LoginActivity.this, UserProfileActivity.class);
+                                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                     startActivity(intent);
                                     finish();

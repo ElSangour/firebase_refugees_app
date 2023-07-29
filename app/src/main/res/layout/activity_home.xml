@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipeContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/light_gray">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/purple_700"
+                android:layout_marginBottom="30dp">
+                <TextView
+                    android:id="@+id/textView_delete_user_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Features Options"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+            </RelativeLayout>
+            <!-- Option 1: Refugees -->
+            <Button
+                android:id="@+id/btnRefugees"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Refugees"
+                android:onClick="onRefugeesClicked"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"/>
+
+            <!-- Option 2: Map -->
+            <Button
+                android:id="@+id/btnMap"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Map"
+                android:onClick="onMapClicked"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"/>
+
+            <!-- Option 3: Donation -->
+            <Button
+                android:id="@+id/btnDonation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Donation"
+                android:onClick="onDonationClicked"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"/>
+            <Button
+                android:id="@+id/btnProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:onClick="onDonationClicked"
+                android:layout_marginLeft="70dp"
+                android:layout_marginRight="70dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
