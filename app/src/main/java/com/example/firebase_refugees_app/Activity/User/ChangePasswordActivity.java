@@ -1,4 +1,4 @@
-package com.example.firebase_refugees_app;
+package com.example.firebase_refugees_app.Activity.User;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.firebase_refugees_app.Activity.Auth.MainActivity;
+import com.example.firebase_refugees_app.R;
+import com.example.firebase_refugees_app.Utils.AppCache;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthCredential;
@@ -165,7 +168,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
             authProfile.signOut();
             AppCache.saveData(getApplicationContext(), "userId", "");
             Toast.makeText(ChangePasswordActivity.this,"Logout",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(ChangePasswordActivity.this,MainActivity.class);
+            Intent intent = new Intent(ChangePasswordActivity.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();

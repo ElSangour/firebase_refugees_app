@@ -1,4 +1,4 @@
-package com.example.firebase_refugees_app;
+package com.example.firebase_refugees_app.Utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;

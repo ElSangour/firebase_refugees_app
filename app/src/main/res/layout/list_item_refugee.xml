@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/textView_refugee_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Refugee Name"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+    <TextView
+        android:id="@+id/textView_refugee_dob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_refugee_name"
+        android:text="Country"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <!-- Add more TextViews for other details of the refugee -->
+    <Button
+        android:id="@+id/button_view_refugee"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="215dp"
+        android:text="V" />
+
+    <Button
+        android:id="@+id/button_delete_refugee"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="150dp"
+        android:backgroundTint="@color/red"
+        android:text="X" />
+
+    <Button
+        android:id="@+id/button_update_refugee"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/dark_green"
+        android:layout_alignParentEnd="true"
+        android:text="E" />
+
+</RelativeLayout>

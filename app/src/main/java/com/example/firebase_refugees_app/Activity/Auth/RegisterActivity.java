@@ -1,4 +1,4 @@
-package com.example.firebase_refugees_app;
+package com.example.firebase_refugees_app.Activity.Auth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,6 +18,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.firebase_refugees_app.Activity.User.UserProfileActivity;
+import com.example.firebase_refugees_app.R;
+import com.example.firebase_refugees_app.Utils.ReadWriteUserDetails;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -158,7 +161,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     if (task.isSuccessful()) {
                                         firebaseUser.sendEmailVerification();
                                         Toast.makeText(RegisterActivity.this,"User Registered successfully,Please Verify your email",Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent(RegisterActivity.this,UserProfileActivity.class);
+                                        Intent intent = new Intent(RegisterActivity.this, UserProfileActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
                                         finish();

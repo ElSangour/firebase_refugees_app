@@ -1,15 +1,17 @@
-package com.example.firebase_refugees_app;
+package com.example.firebase_refugees_app.Activity.User;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.firebase_refugees_app.Activity.DonationActivity;
+import com.example.firebase_refugees_app.Activity.MapActivity;
+import com.example.firebase_refugees_app.Activity.Refugees.RefugeesActivity;
+import com.example.firebase_refugees_app.R;
 
 public class HomeActivity extends AppCompatActivity {
     private Button btnRefugees,btnMap,btnDonation,btnProfile;
@@ -25,21 +27,21 @@ public class HomeActivity extends AppCompatActivity {
         btnRefugees.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,RefugeesActivity.class);
+                Intent intent = new Intent(HomeActivity.this, RefugeesActivity.class);
                 startActivity(intent);
             }
         });
         btnMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,MapActivity.class);
+                Intent intent = new Intent(HomeActivity.this, MapActivity.class);
                 startActivity(intent);
             }
         });
         btnDonation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,DonationActivity.class);
+                Intent intent = new Intent(HomeActivity.this, DonationActivity.class);
                 startActivity(intent);
             }
         });

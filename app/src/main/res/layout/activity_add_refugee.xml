@@ -1,49 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipeContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView xmlns:tools="http://schemas.android.com/tools"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/light_gray"
-        android:orientation="vertical"
-        tools:context=".Activity.User.UpdateEmailActivity">
+        tools:context=".Activity.Auth.RegisterActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:orientation="vertical"
                 android:background="@color/purple_700">
 
                 <TextView
-                    android:id="@+id/textView_update_profile_head"
+                    android:id="@+id/textView_register_head"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:textColor="@color/white"
-                    android:text="Update your profile"
+                    android:text="Add Refugee"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
                 <TextView
-                    android:id="@+id/textView_update_profile_instruction"
+                    android:id="@+id/textView_register_instruction"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You can update your profile to stay up to date!"
-                    android:textAlignment="center"
-                    android:layout_marginRight="30dp"
                     android:textColor="@color/white"
                     android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_below="@id/textView_register_head"
+                    android:text="Please fill all the informations below to complete the process"
+                    android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
-            </LinearLayout>
+            </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -55,10 +57,21 @@
                 android:background="@drawable/border"
                 android:padding="15dp">
 
+                <ImageView
+                    android:id="@+id/imageView_refugee"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:contentDescription="@string/user_display_picture"
+                    android:background="@drawable/no_profile_pic"
+                    android:layout_centerHorizontal="true"
+                    android:scaleType="centerCrop" />
+
+
                 <RelativeLayout
                     android:id="@+id/RL_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/imageView_refugee"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/border">
 
@@ -72,35 +85,38 @@
                         android:src="@drawable/ic_profile" />
 
                     <TextView
-                        android:id="@+id/textView_update_profile_name"
+                        android:id="@+id/textView_register_full_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewName"
                         android:padding="6dp"
-                        android:text="Name" />
+                        android:text="Full Name*" />
 
                     <View
                         android:id="@+id/divider_name"
                         android:layout_width="250dp"
                         android:layout_height="1dp"
-                        android:layout_below="@id/textView_update_profile_name"
+                        android:layout_below="@id/textView_register_full_name"
                         android:layout_centerHorizontal="true"
                         android:background="@android:color/darker_gray" />
 
                     <EditText
-                        android:id="@+id/editText_update_profile_name"
+                        android:id="@+id/editText_register_full_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/textView_update_profile_name"
+                        android:layout_below="@id/textView_register_full_name"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_toEndOf="@id/imageViewName"
                         android:background="@android:color/transparent"
+                        android:hint="enter your full name"
                         android:inputType="textPersonName"
                         android:padding="6dp"
                         android:textCursorDrawable="@drawable/edittextcursor"
                         android:textSize="16sp" />
                 </RelativeLayout>
+
+
 
                 <RelativeLayout
                     android:id="@+id/RL_dob"
@@ -120,30 +136,31 @@
                         android:src="@drawable/ic_birthday" />
 
                     <TextView
-                        android:id="@+id/textView_update_profile_dob"
+                        android:id="@+id/textView_register_dob"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewDoB"
                         android:padding="6dp"
-                        android:text="Date of Birth (dd/mm/yyyy)" />
+                        android:text="Date of Birth (dd/mm/yyyy)*" />
 
                     <View
                         android:id="@+id/divider_dob"
                         android:layout_width="250dp"
                         android:layout_height="1dp"
-                        android:layout_below="@id/textView_update_profile_dob"
+                        android:layout_below="@id/textView_register_dob"
                         android:layout_centerHorizontal="true"
                         android:background="@android:color/darker_gray" />
 
                     <EditText
-                        android:id="@+id/editText_update_profile_dob"
+                        android:id="@+id/editText_register_dob"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/textView_update_profile_dob"
+                        android:layout_below="@id/textView_register_dob"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
                         android:layout_toEndOf="@id/imageViewDoB"
                         android:background="@android:color/transparent"
+                        android:hint="select your dob"
                         android:inputType="date"
                         android:padding="6dp"
                         android:textCursorDrawable="@drawable/edittextcursor"
@@ -153,9 +170,10 @@
                         android:id="@+id/imageView_date_picker"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:layout_below="@id/textView_update_profile_dob"
+                        android:layout_below="@id/textView_register_dob"
                         android:layout_marginTop="10dp"
-                        android:layout_toEndOf="@id/editText_update_profile_dob"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@id/editText_register_dob"
                         android:src="@drawable/ic_calendar" />
                 </RelativeLayout>
 
@@ -177,28 +195,27 @@
                         android:src="@drawable/ic_gender" />
 
                     <TextView
-                        android:id="@+id/textView_update_profile_gender"
+                        android:id="@+id/textView_register_gender"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_toEndOf="@id/imageViewGender"
                         android:padding="6dp"
-                        android:text="Gender" />
+                        android:text="Gender*" />
 
                     <View
                         android:id="@+id/divider_gender"
                         android:layout_width="250dp"
                         android:layout_height="1dp"
-                        android:layout_below="@id/textView_update_profile_gender"
+                        android:layout_below="@id/textView_register_gender"
                         android:layout_centerHorizontal="true"
                         android:background="@android:color/darker_gray" />
 
                     <RadioGroup
-                        android:id="@+id/radio_group_update_profile_gender"
+                        android:id="@+id/radio_group_register_gender"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/textView_update_profile_gender"
+                        android:layout_below="@id/textView_register_gender"
                         android:layout_toEndOf="@id/imageViewGender"
-                        android:contentDescription=""
                         android:orientation="horizontal">
 
                         <RadioButton
@@ -207,23 +224,24 @@
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/purple_500"
                             android:text="Female"
-                            android:textColor="#666666"
+                            android:textColor="#555555"
                             android:textSize="16sp" />
 
                         <RadioButton
                             android:id="@+id/radio_male"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
                             android:buttonTint="@color/purple_500"
                             android:text="Male"
-                            android:textColor="#666666"
+                            android:textColor="#555555"
                             android:textSize="16sp" />
 
                     </RadioGroup>
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/RL_mobile"
+                    android:id="@+id/RL_country"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/RL_gender"
@@ -231,87 +249,69 @@
                     android:background="@drawable/border">
 
                     <ImageView
-                        android:id="@+id/imageViewMobile"
+                        android:id="@+id/imageViewCountry"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:src="@drawable/ic_mobile" />
+                        android:src="@drawable/baseline_edit_location_alt_24" />
 
                     <TextView
-                        android:id="@+id/textView_update_profile_mobile"
+                        android:id="@+id/textView_register_country"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_toEndOf="@id/imageViewMobile"
+                        android:layout_toEndOf="@id/imageViewCountry"
                         android:padding="6dp"
-                        android:text="Mobile" />
+                        android:text="Country*" />
 
                     <View
-                        android:id="@+id/divider_mobile"
+                        android:id="@+id/divider_country"
                         android:layout_width="250dp"
                         android:layout_height="1dp"
-                        android:layout_below="@id/textView_update_profile_mobile"
+                        android:layout_below="@id/textView_register_country"
                         android:layout_centerHorizontal="true"
                         android:background="@android:color/darker_gray" />
 
                     <EditText
-                        android:id="@+id/editText_update_profile_mobile"
+                        android:id="@+id/editText_register_Country"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/textView_update_profile_mobile"
+                        android:layout_below="@id/textView_register_country"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_toEndOf="@id/imageViewMobile"
+                        android:layout_toEndOf="@id/imageViewCountry"
                         android:background="@android:color/transparent"
-                        android:inputType="phone"
+                        android:hint="Enter The Country"
+                        android:inputType="text"
                         android:padding="6dp"
                         android:textCursorDrawable="@drawable/edittextcursor"
                         android:textSize="16sp" />
                 </RelativeLayout>
 
+
                 <Button
-                    android:id="@+id/button_update_profile"
+                    android:id="@+id/button_add"
                     android:layout_width="180dp"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/RL_mobile"
+                    android:layout_below="@id/RL_country"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="30dp"
-                    android:text="Update Profile"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/textView_profile_upload_pic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/button_update_profile"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="50dp"
                     android:layout_marginBottom="50dp"
-                    android:text="@string/upload_pic_u" />
-
-                <TextView
-                    android:id="@+id/textView_profile_update_email"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/button_update_profile"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="50dp"
-                    android:text="@string/update_email_u" />
+                    android:text="Add" />
 
                 <ProgressBar
                     android:id="@+id/progressBar"
-                    style="?android:attr/progressBarStyleLarge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
                     android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
                     android:elevation="10dp"
                     android:visibility="gone" />
-
             </RelativeLayout>
 
         </LinearLayout>
+
 
     </ScrollView>
 

@@ -16,82 +16,88 @@
         android:theme="@style/Theme.Firebase_refugees_app"
         tools:targetApi="31">
         <activity
-            android:name=".DonationActivity"
+            android:name=".Activity.Refugees.RefugeeDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".MapActivity"
+            android:name=".Activity.Refugees.AddRefugee"
             android:exported="false" />
         <activity
-            android:name=".RefugeesActivity"
+            android:name=".Activity.DonationActivity"
             android:exported="false" />
         <activity
-            android:name=".HomeActivity"
+            android:name=".Activity.MapActivity"
             android:exported="false" />
         <activity
-            android:name=".DeleteProfileActivity"
+            android:name=".Activity.Refugees.RefugeesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.User.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.User.DeleteProfileActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Activity.Auth.MainActivity" />
         </activity>
         <activity
-            android:name=".ChangePasswordActivity"
+            android:name=".Activity.User.ChangePasswordActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UserProfileActivity" />
+                android:value=".Activity.User.UserProfileActivity" />
         </activity>
         <activity
-            android:name=".UpdateEmailActivity"
+            android:name=".Activity.User.UpdateEmailActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UserProfileActivity" />
+                android:value=".Activity.User.UserProfileActivity" />
         </activity>
         <activity
-            android:name=".UpdateProfileActivity"
+            android:name=".Activity.User.UpdateProfileActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UserProfileActivity" />
+                android:value=".Activity.User.UserProfileActivity" />
         </activity>
         <activity
-            android:name=".UploadProfilePicActivity"
+            android:name=".Activity.User.UploadProfilePicActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UserProfileActivity" />
+                android:value=".Activity.User.UserProfileActivity" />
         </activity>
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".Activity.Auth.ForgotPasswordActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Activity.Auth.MainActivity" />
         </activity>
         <activity
-            android:name=".UserProfileActivity"
+            android:name=".Activity.User.UserProfileActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".UserProfileActivity" />
+                android:value=".Activity.User.UserProfileActivity" />
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".Activity.Auth.LoginActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Activity.Auth.MainActivity" />
         </activity>
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Activity.Auth.RegisterActivity"
             android:exported="false">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".Activity.Auth.MainActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.Auth.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

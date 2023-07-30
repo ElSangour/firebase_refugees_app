@@ -1,4 +1,4 @@
-package com.example.firebase_refugees_app;
+package com.example.firebase_refugees_app.Activity.Auth;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +18,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.firebase_refugees_app.Activity.User.HomeActivity;
+import com.example.firebase_refugees_app.R;
+import com.example.firebase_refugees_app.Utils.AppCache;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;

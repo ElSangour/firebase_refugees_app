@@ -1,4 +1,4 @@
-package com.example.firebase_refugees_app;
+package com.example.firebase_refugees_app.Activity.User;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -19,6 +19,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.firebase_refugees_app.Activity.Auth.MainActivity;
+import com.example.firebase_refugees_app.R;
+import com.example.firebase_refugees_app.Utils.AppCache;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -145,7 +148,7 @@ public class DeleteProfileActivity extends AppCompatActivity {
                     deleteUserData();
                     authProfile.signOut();
                     Toast.makeText(DeleteProfileActivity.this,"User Deleted",Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(DeleteProfileActivity.this,MainActivity.class);
+                    Intent intent = new Intent(DeleteProfileActivity.this, MainActivity.class);
                     startActivity(intent);
                     finish();
                 } else {

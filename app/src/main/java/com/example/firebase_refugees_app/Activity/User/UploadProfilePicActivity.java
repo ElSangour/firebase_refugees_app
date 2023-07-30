@@ -1,10 +1,9 @@
-package com.example.firebase_refugees_app;
+package com.example.firebase_refugees_app.Activity.User;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ContentProvider;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
@@ -18,13 +17,14 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.internal.Storage;
+import com.example.firebase_refugees_app.Activity.Auth.MainActivity;
+import com.example.firebase_refugees_app.R;
+import com.example.firebase_refugees_app.Utils.AppCache;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.ktx.Firebase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
@@ -155,7 +155,7 @@ public class UploadProfilePicActivity extends AppCompatActivity {
             authProfile.signOut();
             AppCache.saveData(getApplicationContext(), "userId", "");
             Toast.makeText(UploadProfilePicActivity.this,"Logout",Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(UploadProfilePicActivity.this,MainActivity.class);
+            Intent intent = new Intent(UploadProfilePicActivity.this, MainActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
             finish();
