@@ -143,7 +143,7 @@ public class AddRefugee extends AppCompatActivity {
         if (uriImage != null) {
             progressBar.setVisibility(View.VISIBLE); // Show progress bar while uploading
             storageReference = FirebaseStorage.getInstance().getReference("RefugeesPics");
-            StorageReference fileReference = storageReference.child(uuid.toString() + "." + getFileExtension(uriImage));
+            StorageReference fileReference = storageReference.child(uuid.toString());
             fileReference.putFile(uriImage).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
