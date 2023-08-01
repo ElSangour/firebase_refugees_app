@@ -9,6 +9,9 @@
     <uses-permission android:name="android.permission.INTERNET" /> <!-- Permission for internet -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"  />
 
 
     <application
@@ -35,7 +38,11 @@
             android:exported="false" />
         <activity
             android:name=".Activity.Refugees.RefugeesActivity"
-            android:exported="false" />
+            android:exported="false" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activity.User.HomeActivity"/>
+        </activity>
         <activity
             android:name=".Activity.User.HomeActivity"
             android:exported="false" />

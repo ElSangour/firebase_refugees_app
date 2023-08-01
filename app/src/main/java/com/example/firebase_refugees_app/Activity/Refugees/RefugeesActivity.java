@@ -1,26 +1,19 @@
 package com.example.firebase_refugees_app.Activity.Refugees;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.firebase_refugees_app.Activity.Auth.RegisterActivity;
-import com.example.firebase_refugees_app.Activity.Refugees.AddRefugee;
-import com.example.firebase_refugees_app.Activity.Refugees.RefugeeAdapter;
-import com.example.firebase_refugees_app.Activity.Refugees.RefugeeDetailActivity;
-import com.example.firebase_refugees_app.Activity.User.DeleteProfileActivity;
-import com.example.firebase_refugees_app.Activity.User.UserProfileActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.example.firebase_refugees_app.R;
 import com.example.firebase_refugees_app.Utils.ReadWriteRefugeeDetails;
 import com.google.firebase.database.ChildEventListener;
@@ -30,7 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
-
 
 import java.util.ArrayList;
 
@@ -130,7 +122,6 @@ public class RefugeesActivity extends AppCompatActivity implements RefugeeAdapte
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE);
         integrator.setPrompt("Scan a QR code");
-        integrator.setOrientationLocked(true);
         integrator.setCameraId(0); // Use the back camera by default
         integrator.setBeepEnabled(true); // Play beep sound when a QR code is scanned
         integrator.initiateScan();

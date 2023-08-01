@@ -1,9 +1,5 @@
 package com.example.firebase_refugees_app.Activity.Refugees;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -12,10 +8,12 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.firebase_refugees_app.Activity.User.UserProfileActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import com.example.firebase_refugees_app.R;
 import com.example.firebase_refugees_app.Utils.ReadWriteRefugeeDetails;
-import com.example.firebase_refugees_app.Utils.ReadWriteUserDetails;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -41,7 +39,6 @@ public class RefugeeDetailActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         uuid = extras.getString("id");
         getSupportActionBar().setTitle(uuid);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         swipeToRefresh();
         textViewWelcome = findViewById(R.id.textView_show_welcome);
         textViewFullName = findViewById(R.id.textView_show_full_name);

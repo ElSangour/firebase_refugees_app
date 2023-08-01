@@ -1,12 +1,11 @@
 package com.example.firebase_refugees_app.Activity.User;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-
 import android.view.View;
 import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.firebase_refugees_app.Activity.DonationActivity;
 import com.example.firebase_refugees_app.Activity.MapActivity;

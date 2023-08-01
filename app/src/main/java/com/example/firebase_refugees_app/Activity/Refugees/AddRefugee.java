@@ -1,9 +1,5 @@
 package com.example.firebase_refugees_app.Activity.Refugees;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -21,6 +17,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.firebase_refugees_app.R;
 import com.example.firebase_refugees_app.Utils.ReadWriteRefugeeDetails;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -32,7 +32,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
-import com.squareup.picasso.Picasso;
 
 import java.util.Calendar;
 import java.util.UUID;

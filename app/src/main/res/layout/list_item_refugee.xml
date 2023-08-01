@@ -24,15 +24,17 @@
         android:id="@+id/button_view_refugee"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="215dp"
+        android:layout_marginRight="65dp"
+        android:layout_alignParentEnd="true"
         android:text="V" />
 
     <Button
         android:id="@+id/button_delete_refugee"
         android:layout_width="60dp"
         android:layout_height="50dp"
-        android:layout_marginLeft="150dp"
+        android:layout_marginRight="130dp"
         android:backgroundTint="@color/red"
+        android:layout_alignParentEnd="true"
         android:text="X" />
 
     <Button
